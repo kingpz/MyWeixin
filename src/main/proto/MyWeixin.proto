@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "HLW";
+
+package helloworld;
+
+// The greeting service definition.
+service Greeter {
+    // Sends a greeting
+    rpc LoginVerification(LoginRequest) returns (LoginReply) {}
+    rpc RegisterVerification(LoginRequest) returns (RegisterReply) {}
+    rpc MessageVerification(MessageRequest) returns (MessageReply) {}
+    rpc ChatMessage(stream MessageRequest) returns (stream MessageReply) {}
+    rpc AddFriends(AddRequest) returns (AddReply){}
+    rpc QuerryFriend(QuerryRequest) returns (QuerryReply){}
+}
+
+message QuerryRequest{
+    int32 u_id = 1;
+    int32 f_id = 2;
+}
+message QuerryReply{
+    string message=1;
+    int32 u_ID=2;
+    string u_LoginID=3;
+    string u_NickName=4;
+    string u_HeadPortrait=5;
+}
+message AddRequest {
+    int32 u_id = 1;
+    int32 f_id = 2;
+    string name = 3;
+}
+message AddReply{
+    string message=1;
+    int32 u_ID=2;
+    string u_LoginID=3;
+    string u_NickName=4;
+    string u_HeadPortrait=5;
+}
+
+// The request message containing the user's name.
+message LoginRequest {
+    string name = 1;
+    string password=2;
+}
+
+// The response message containing the greetings
+message LoginReply {
+    string message=1;
+    int32 u_ID=2;
+    string u_LoginID=3;
+    string u_NickName=4;
+    string u_HeadPortrait=5;
+}
+message RegisterReply{
+    string message=1;
+}
+
+//发送消息请求
+message MessageRequest {
+    string type=1;
+    string m_PostMessages = 2;
+    int32 m_MessagesType=3;
+    int32 m_ToUserID=4;
+    int32 m_FromUserID=5;
+}
+//接收消息响应
+message MessageReply {
+    string type=1;
+    repeated Messages mes=2;
+}
+
+//接受消息存储对象
+message Messages{
+    string m_PostMessages=1;
+    int32 m_MessagesType=2;
+    int32 m_FromUserID=3;
+}

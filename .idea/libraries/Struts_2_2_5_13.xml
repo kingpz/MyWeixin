@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Struts 2-2.5.13">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/FristSSH/lib/struts2-annotations.jar!/" />
+      <root url="jar://$PROJECT_DIR$/FristSSH/lib/commons-fileupload.jar!/" />
+      <root url="jar://$PROJECT_DIR$/FristSSH/lib/commons-io.jar!/" />
+      <root url="jar://$PROJECT_DIR$/FristSSH/lib/ognl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/FristSSH/lib/commons-lang.jar!/" />
+      <root url="jar://$PROJECT_DIR$/FristSSH/lib/freemarker.jar!/" />
+      <root url="jar://$PROJECT_DIR$/FristSSH/lib/struts2-core.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
